@@ -17,12 +17,17 @@
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label :precio %>
     <%= form.text_field :price %>
   </div>
 
+ <div class="field">
+    <%= form.label :categoria %>
+    <%= form.collection_select :category_id, Category.all.order(name: :asc), :id, :name %>
+  </div>
+
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :descripción %>
     <%= form.text_area :description %>
   </div>
 
