@@ -11,13 +11,18 @@
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title"><%= article.title %></h5>
+      <p> <%= article.category.name %> </p>
       <h6 class="card-subtitle mb-2 text-muted"><%= number_to_currency(article.price) %></h6>
       <p class="card-text"><%= truncate(strip_tags(article.description), length: 200) %></p>
+      <hr/>
+      <p class="card-subtitle mb-2"> Hay <%= article.quantity %> unidades, en <%= article.location.name %></p>
       <div class="">
       <a class='p-2'><%= link_to 'Show', article %></a>
       <a class='p-2'><%= link_to 'Edit', edit_article_path(article) %></a>
       <a class='p-2'><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></a>
       </div>
+      <%= link_to 'Retirar', edit_article_path(article), class:'btn btn-info' %>
+
     </div>
   </div>
 </div>

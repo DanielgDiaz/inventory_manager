@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  resources :subcategories, except: :show
-  resources :locations, except: :show
+  resources :locations
   resources :categories, except: :show
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
-  resources :users
   get 'home/index'
   get "/", to: "home#index"
+  
+
+  resources :users
   
   resources :articles
 

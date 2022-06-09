@@ -7,8 +7,9 @@
 <div class="card-group">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title"><%= article.title %></h5>
+      <h5 class="card-title"><%= article.title%></h5>
       <h6 class="card-subtitle mb-2 text-muted"><%= article.price %></h6>
+      <h6 class="card-subtitle mb-2 text-muted"><%= article.location.name %></h6>
       <p class="card-text"><%= truncate(strip_tags(article.description), length: 200) %></p>
       <div class="">
       <%= link_to 'Show', article %>

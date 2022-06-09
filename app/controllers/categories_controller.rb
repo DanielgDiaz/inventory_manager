@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
     @categories = Category.all.order(name: :asc)
   end
 
+
   # GET /categories/new
   def new
     @category = Category.new
@@ -61,6 +62,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:name,)
+      params.require(:category).permit(:name)
     end
 end
