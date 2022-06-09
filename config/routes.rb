@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :subcategories, except: :show
+  resources :locations, except: :show
   resources :categories, except: :show
   get 'sessions/new'
   get 'sessions/create'

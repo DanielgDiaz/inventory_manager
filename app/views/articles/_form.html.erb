@@ -24,6 +24,13 @@
  <div class="field">
     <%= form.label :categoria %>
     <%= form.collection_select :category_id, Category.all.order(name: :asc), :id, :name %>
+    <%= form.label :subcategoria %>
+    <%= form.collection_select :subcategory_id, Subcategory.all.order(name: :asc), :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ubicación %>
+    <%= form.collection_select :location_id, Location.all.order(name: :asc), :id, :name %>
   </div>
 
   <div class="field">
