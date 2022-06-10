@@ -16,6 +16,12 @@
     <%= form.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= form.label :parent %>
+    <%= form.collection_select :category_id, Category.all.order(name: :asc), :id, :name %>
+  </div>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

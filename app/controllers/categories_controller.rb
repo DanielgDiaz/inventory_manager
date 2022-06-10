@@ -1,10 +1,11 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: %i[ show edit update destroy ]
+  before_action :set_category, only: %i[ show edit update destroy eliminar]
 
   # GET /categories or /categories.json
   def index
     @categories = Category.all.order(name: :asc)
   end
+
 
 
   # GET /categories/new
@@ -44,8 +45,7 @@ class CategoriesController < ApplicationController
     end
   end
 
-  # DELETE /categories/1 or /categories/1.json
-  def destroy
+  def eliminar    
     @category.destroy
 
     respond_to do |format|
@@ -53,6 +53,7 @@ class CategoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -62,6 +63,7 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:name)
+      params.require(:category).permit(:name, :category_id)
     end
+
 end
