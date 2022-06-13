@@ -1,18 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Categories</h1>
 
-<table>
+<%= link_to 'Añadir Categoría', new_category_path, class:'text-dark' %>
+<div class="center-block">
+<table class="table table-striped table-dark large-container center-block">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Categorias</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @categories.each do |category| %>
-      <tr>
+      <tr >
         <td><%= category.name %></td>
         <td><%= link_to 'Edit', edit_category_path(category), class:'btn btn-info' %></td>    
         <td><%= link_to 'Eliminar', eliminar_category_path(category), class:'btn btn-danger' %></td>
@@ -20,7 +21,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New Category', new_category_path %>
+

@@ -10,9 +10,12 @@ Rails.application.routes.draw do
       get :eliminar
     end
   end
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/destroy'
+
+    resources :sessions, except: :show
+
+  # get 'sessions/new'
+  # get 'sessions/create'
+  # get 'sessions/destroy'
   get 'home/index'
   get "/", to: "home#index"
   
