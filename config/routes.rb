@@ -4,33 +4,44 @@ Rails.application.routes.draw do
       get :eliminar
     end
   end
-
   resources :categories, except: :show do
     member do
       get :eliminar
     end
   end
-
-    resources :sessions, except: :show
-
-  # get 'sessions/new'
-  # get 'sessions/create'
-  # get 'sessions/destroy'
-  get 'home/index'
-  get "/", to: "home#index"
-  
-
   resources :users do
     member do
       get :eliminar
     end
   end
-  
   resources :articles do
     member do
       get :eliminar
     end
   end
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  # resources :sessions, except: :show
+  # controller :sessions do
+  #   get 'login' => :new
+  #   post 'login' => :create
+  #   delete 'logout' => :destroy
+  # end
+
+  get "registro", to: "users#new"
+  get "login", to: "sessions#new"
+  post "login", to: "sessions#create"
+  
+
+  resources :sessions do
+    member do
+      get :eliminar
+    end
+  end
+
+
+
+
+  get 'home/index'
+  get "/", to: "home#index"
+
 end

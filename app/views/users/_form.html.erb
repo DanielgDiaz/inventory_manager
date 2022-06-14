@@ -28,8 +28,14 @@
 
   <div class="field">
     <%= form.label :rol %>
-
     <%= form.text_field :role %>
+  </div>
+
+  <div class='field'>
+  <%= check_box_tag(:role) %>
+  <%= label_tag(:admin) %>
+  <%= check_box_tag(:role) %>
+  <%= label_tag(:tecnico) %>
   </div>
 
   <div class="actions mt-5">

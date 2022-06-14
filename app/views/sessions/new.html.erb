@@ -1,22 +1,31 @@
+
 <% if flash[:alert] %>
-    <aside class="notice"><%= flash[:alert] %></aside>
+    <aside class="alert small-container center-block my-5 "><%= flash[:alert] %></aside>
 <%end%>
 
-<%= form_tag do %>
- <h2> Iniiciar sesión </h2>
+<div class="small-container center-block">
+<%= form_with(url: login_path) do |form| %>
+ <h2 class="mt-5 text-center"> Iniciar sesión </h2>
 
  <div class="field">
-    <%= label_tag :name, 'Name:' %>
+    <%= label_tag :name, 'Usuario:' %>
     <%= text_field_tag :name, params[:name] %>
  </div>
 
  <div class="field">
-    <%= label_tag :password, 'Password:' %>
+    <%= label_tag :password, 'Contraseña:' %>
     <%= password_field_tag :password, params[:password] %>
  </div>
 
- <div class="actions">
-    <%= submit_tag "Login" %>
+ <div class="actions mt-5 ">
+    <%= form.submit "Iniciar sesión", class: "bg-info text-white"%>
  </div>
 
+</div>
+
  <%end%>
+
+
+<%= link_to 'Registrarse', new_user_path, class:'text-dark text-uppercase text-decoration-none m-2' %>
+
+ 
